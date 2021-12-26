@@ -93,7 +93,7 @@ describe('Queue', () => {
     it('should throw error with message "QUEUE_UNDERFLOW" if there are no elements in the queue', () => {
       expect(() => queue.dequeue()).toThrow(new Error('QUEUE_UNDERFLOW'));
     });
-  });  
+  });
 
   describe('Method "display"', () => {
     it('should be declared', () => {
@@ -105,5 +105,4 @@ describe('Queue', () => {
       expect(queue.display()).toEqual([10]);
     });
   });
-
 });

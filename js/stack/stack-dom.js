@@ -11,12 +11,10 @@ const takeStackBtn = document.getElementById('take-stack');
 const newStack = new Stack();
 
 const clearStackInput = () => {
-  // ... your code goes here
+  stackInput.value = '';
 };
 
-const renderListStack = () => {
-  // ... your code goes here
-};
+const renderListStack = () => {};
 
 renderListStack();
 
@@ -30,17 +28,20 @@ const generateWarningStack = (type) => {
 
 const addToStack = () => {
   try {
-    // ... your code goes here
+    clearStackInput();
+    newStack.push(stackInput.value);
+    renderListStack();
   } catch (error) {
-    // there was an overflow error, handle it
+    generateWarningStack('overflow');
   }
 };
 
 const removeFromStack = () => {
   try {
-    // ... your code goes here
+    newStack.pop();
+    renderListStack();
   } catch (error) {
-    // there was an underflow error, handle it
+    generateWarningStack('underflow');
   }
 };
 
